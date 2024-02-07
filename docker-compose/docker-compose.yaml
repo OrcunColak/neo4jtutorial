@@ -1,0 +1,16 @@
+# https://ondrej-kvasnovsky.medium.com/running-neo4j-locally-f3c62ae1d9c1
+version: "3.8"
+services:
+  neo4j:
+    image: neo4j:latest
+    container_name: 'local-dev-neo4j'
+    volumes:
+      - ./data:/data #volume on host path
+    environment:
+      NEO4J_AUTH: neo4j/password
+    # http://localhost:7474/browser/
+    # user : neo4j
+    # password : password
+    ports:
+      - "7474:7474"
+      - "7687:7687"
